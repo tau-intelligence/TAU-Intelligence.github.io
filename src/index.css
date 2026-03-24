@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 :root {
-  --dark-blue: #050621;
+  --dark-background: #000000;
   --orange: #fc9e4f;
   --light-orange: #e6b981;
   --text-color: #fc9e4f;
@@ -15,7 +15,12 @@
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background-color: var(--dark-blue);
+  background-color: var(--dark-background);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(252, 158, 79, 0.2) 0%, rgba(0, 0, 0, 0) 45%),
+    radial-gradient(circle at 85% 25%, rgba(230, 185, 129, 0.14) 0%, rgba(0, 0, 0, 0) 42%),
+    linear-gradient(140deg, #000000 0%, #0c0804 45%, #000000 100%);
+  background-attachment: fixed;
   color: var(--text-color);
   line-height: 1.6;
 }

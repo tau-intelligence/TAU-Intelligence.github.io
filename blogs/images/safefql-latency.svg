@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SafeFQL — relative inference latency.
+  Numbers anchored to the paper's reported figures:
+    SafeFQL          1.0×  (baseline, N=1)
+    SafeIFQL N=1    ~1.5×  (single-step generative baselines)
+    FISOR    N=1    ~1.5×
+    FISOR    R.S.16  2.5×  (paper's headline 2.5× speedup over R.S. N=16)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" role="img"
+     aria-label="Relative inference latency. SafeFQL is the unit baseline; SafeIFQL and FISOR at N=1 are about 1.5x slower; FISOR with rejection sampling at N=16 is the 2.5x slower point cited in the paper.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#15130F"/>
+      <stop offset="100%" stop-color="#0E0D0B"/>
+    </linearGradient>
+    <linearGradient id="barOrange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#E9A766"/>
+      <stop offset="100%" stop-color="#E8722C"/>
+    </linearGradient>
+    <linearGradient id="barCool" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#6FB7C9"/>
+      <stop offset="100%" stop-color="#3F7E8F"/>
+    </linearGradient>
+    <linearGradient id="barMute" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#7E7565"/>
+      <stop offset="100%" stop-color="#3a342a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="720" height="360" fill="url(#bg)"/>
+  <text x="48" y="28" fill="#7E7565" font-family="JetBrains Mono, monospace"
+        font-size="11" letter-spacing="2">RELATIVE INFERENCE LATENCY  (× SafeFQL)</text>
+
+  <!-- Plot area: y-axis from 0× (bottom) to 3× (top). 220 px tall → ~73.3 px per unit.
+       Bars 80 px wide, 140 px apart. -->
+  <g transform="translate(96, 56)">
+    <!-- baseline + axis -->
+    <line x1="0" y1="220" x2="540" y2="220" stroke="#2E2820"/>
+    <line x1="0" y1="0"   x2="0"   y2="220" stroke="#2E2820"/>
+
+    <!-- gridlines + y labels (0×, 1×, 2×, 3×) -->
+    <g stroke="#1C1813" stroke-dasharray="2 4">
+      <line x1="0" y1="147" x2="540" y2="147"/>
+      <line x1="0" y1="73"  x2="540" y2="73"/>
+      <line x1="0" y1="0"   x2="540" y2="0"/>
+    </g>
+    <g fill="#7E7565" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="end">
+      <text x="-8" y="224">0×</text>
+      <text x="-8" y="151">1×</text>
+      <text x="-8" y="77">2×</text>
+      <text x="-8" y="4">3×</text>
+    </g>
+    <text x="-110" y="-72" transform="rotate(-90)" fill="#B7AC97"
+          font-family="Inter, sans-serif" font-size="11">latency (× SafeFQL)</text>
+
+    <!-- Bar 1 — SafeFQL (1.0×) → top at y=147, height 73 -->
+    <g>
+      <rect x="40"  y="147" width="80" height="73" rx="3" fill="url(#barOrange)"/>
+      <text x="80"  y="139" text-anchor="middle" fill="#E8722C"
+            font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">1.0×</text>
+      <text x="80"  y="244" text-anchor="middle" fill="#F2E9D8"
+            font-family="Inter, sans-serif" font-size="12">SafeFQL</text>
+      <text x="80"  y="258" text-anchor="middle" fill="#E8722C"
+            font-family="JetBrains Mono, monospace" font-size="9" letter-spacing=".5">OURS · N=1 (baseline)</text>
+    </g>
+
+    <!-- Bar 2 — SafeIFQL N=1 (1.5×) → top at y=110, height 110 -->
+    <g>
+      <rect x="180" y="110" width="80" height="110" rx="3" fill="url(#barCool)"/>
+      <text x="220" y="102" text-anchor="middle" fill="#6FB7C9"
+            font-family="JetBrains Mono, monospace" font-size="11">1.5×</text>
+      <text x="220" y="244" text-anchor="middle" fill="#F2E9D8"
+            font-family="Inter, sans-serif" font-size="12">SafeIFQL</text>
+      <text x="220" y="258" text-anchor="middle" fill="#7E7565"
+            font-family="JetBrains Mono, monospace" font-size="9" letter-spacing=".5">N=1 · multi-step</text>
+    </g>
+
+    <!-- Bar 3 — FISOR N=1 (~1.5×) → same height as bar 2 -->
+    <g>
+      <rect x="320" y="110" width="80" height="110" rx="3" fill="url(#barCool)" fill-opacity=".75"/>
+      <text x="360" y="102" text-anchor="middle" fill="#6FB7C9"
+            font-family="JetBrains Mono, monospace" font-size="11">~1.5×</text>
+      <text x="360" y="244" text-anchor="middle" fill="#F2E9D8"
+            font-family="Inter, sans-serif" font-size="12">FISOR</text>
+      <text x="360" y="258" text-anchor="middle" fill="#7E7565"
+            font-family="JetBrains Mono, monospace" font-size="9" letter-spacing=".5">N=1 · DDPM</text>
+    </g>
+
+    <!-- Bar 4 — FISOR R.S. N=16 (2.5×) → top at y=37, height 183 -->
+    <g>
+      <rect x="460" y="37" width="80" height="183" rx="3" fill="url(#barMute)"/>
+      <text x="500" y="29" text-anchor="middle" fill="#B7AC97"
+            font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">2.5×</text>
+      <text x="500" y="244" text-anchor="middle" fill="#F2E9D8"
+            font-family="Inter, sans-serif" font-size="12">FISOR</text>
+      <text x="500" y="258" text-anchor="middle" fill="#7E7565"
+            font-family="JetBrains Mono, monospace" font-size="9" letter-spacing=".5">R.S. N=16</text>
+    </g>
+
+    <!-- Annotation 1: 1.5× faster between bar 1 and bar 2 (placed below the line of the bar tops) -->
+    <g>
+      <line x1="120" y1="175" x2="180" y2="125"
+            stroke="#6FB7C9" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="152" y="195" text-anchor="middle" fill="#6FB7C9"
+            font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">1.5× faster</text>
+    </g>
+
+    <!-- Annotation 2: 2.5× faster between bar 1 and bar 4 (paper's headline) -->
+    <g>
+      <line x1="120" y1="180" x2="460" y2="55"
+            stroke="#E8722C" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="290" y="50" text-anchor="middle" fill="#E8722C"
+            font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">2.5× faster (vs R.S. N=16)</text>
+    </g>
+  </g>
+
+  <!-- Footnote: be transparent about what the paper reports. -->
+  <text x="48" y="338" fill="#7E7565" font-family="Inter, sans-serif" font-size="10.5" font-style="italic">
+    Bars are normalised to SafeFQL’s per-step latency. The 2.5× speedup vs FISOR with rejection sampling at N=16 is the
+  </text>
+  <text x="48" y="352" fill="#7E7565" font-family="Inter, sans-serif" font-size="10.5" font-style="italic">
+    paper’s headline figure (Conclusion §5); the ~1.5× margin over single-sample N=1 baselines is the per-step gain.
+  </text>
+</svg>
+
+

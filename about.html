@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About &amp; Contact — Tau Intelligence</title>
+  <meta name="description" content="About Tau Intelligence — a research group working on reinforcement learning, world models, and robotics. Contact details for the team." />
+  <meta name="theme-color" content="#0E0D0B" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+  </script>
+</head>
+<body>
+  <canvas class="hero-bg-canvas" id="hero-canvas"></canvas>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="" onerror="this.onerror=null;this.src='assets/img/logo.svg'" />
+        <div>
+          <div class="brand-name"><span class="brand-mark">τ</span>&nbsp; Tau Intelligence</div>
+          <div class="brand-sub">Trustworthy Autonomy under Uncertainty</div>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">≡</button>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="blogs.html">Writings</a>
+        <a href="demos.html">Demos</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section container">
+    <div class="section-title">
+      <div>
+        <div class="kicker">About</div>
+        <h2>A small group, working at the edge of what RL can do.</h2>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          Tau Intelligence is a research group. The name <em>τ</em>
+          stands for <strong>Trustworthy Autonomy under Uncertainty</strong> —
+          the property we want every system we touch to have.
+        </p>
+        <p>
+          Our work sits at the intersection of reinforcement learning,
+          learned world models, and robotics. We care about the unglamorous
+          parts: stable training, honest evaluation, robust deployment,
+          and methods that survive contact with reality.
+        </p>
+        <p>
+          We publish openly at venues like ICML, TMLR, RLC, ICLR,
+          AAAI, etc., and we open-source what we can.
+        </p>
+
+        <div class="values">
+          <div class="value">
+            <h4>Rigor</h4>
+            <p>Strong baselines, ablations, and confidence intervals — not
+               just headline numbers.</p>
+          </div>
+          <div class="value">
+            <h4>Openness</h4>
+            <p>We default to open-sourcing what we can and writing things
+               down so others can build on them.</p>
+          </div>
+          <div class="value">
+            <h4>Humility about uncertainty</h4>
+            <p>Models that know what they don't know are the only ones
+               safe to deploy.</p>
+          </div>
+          <div class="value">
+            <h4>Long horizons</h4>
+            <p>We pick problems whose solutions matter five years from
+               now, not five weeks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="contact-card">
+        <h3>Get in touch.</h3>
+        <p style="color:var(--text-dim); margin-top:0;">
+          For research collaborations, questions about our work, or
+          academic correspondence — the channels below all reach us.
+        </p>
+
+        <div class="contact-row">
+          <div class="label">Email</div>
+          <a href="mailto:tayalmanan28@gmail.com">tayalmanan28@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <div class="label">GitHub</div>
+          <a href="https://github.com/tau-intelligence" target="_blank" rel="noopener">github.com/tau-intelligence</a>
+        </div>
+        <div class="contact-row">
+          <div class="label">Scholar</div>
+          <a href="https://scholar.google.com/citations?hl=en&user=jWWQhY8AAAAJ" target="_blank" rel="noopener">Google Scholar →</a>
+        </div>
+        <div class="contact-row">
+          <div class="label">Location</div>
+          <span style="color:var(--text-dim);">Remote · India</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-mark">τ</span>
+        <span class="brand-name">Tau Intelligence</span>
+      </div>
+      <div>© <span id="year"></span> Tau Intelligence</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script type="module" src="assets/js/three-hero.js"></script>
+</body>
+</html>

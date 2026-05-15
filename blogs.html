@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Writings — Tau Intelligence</title>
+  <meta name="description" content="Technical blogs and notes from the Tau Intelligence team — RL, world models, robotics, and engineering writeups." />
+  <meta name="theme-color" content="#0E0D0B" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+  </script>
+</head>
+<body>
+  <canvas class="hero-bg-canvas" id="hero-canvas"></canvas>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="" onerror="this.onerror=null;this.src='assets/img/logo.svg'" />
+        <div>
+          <div class="brand-name"><span class="brand-mark">τ</span>&nbsp; Tau Intelligence</div>
+          <div class="brand-sub">Trustworthy Autonomy under Uncertainty</div>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">≡</button>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="blogs.html" class="active">Writings</a>
+        <a href="demos.html">Demos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section container">
+    <div class="section-title">
+      <div>
+        <div class="kicker">Writings</div>
+        <h2>Technical notes &amp; long-form essays.</h2>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filter-bar">
+      <input type="search" id="search-input" class="search-input" placeholder="Search writings…" aria-label="Search writings" />
+      <button class="filter-btn active" data-filter="all">All</button>
+    </div>
+
+    <div class="card-grid" id="blogs-grid">
+      <div class="empty-state">Loading writings…</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-mark">τ</span>
+        <span class="brand-name">Tau Intelligence</span>
+      </div>
+      <div>© <span id="year"></span> Tau Intelligence</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script src="assets/js/blogs-loader.js"></script>
+  <script type="module" src="assets/js/three-hero.js"></script>
+</body>
+</html>

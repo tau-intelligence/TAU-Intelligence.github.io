@@ -1,0 +1,66 @@
+# Auto-rebuild content/blogs.json whenever /blogs changes, then publish
+# the static site to GitHub Pages.
+#
+# Make sure GitHub Pages is set to "GitHub Actions" as the source under
+# Settings → Pages.
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Regenerate blogs manifest
+        run: python3 scripts/generate_manifest.py
+
+      - name: Commit manifest if it changed
+        run: |
+          if [ -n "$(git status --porcelain content/blogs.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add content/blogs.json
+            # `[skip ci]` prevents this auto-commit from re-triggering the workflow.
+            git commit -m "chore: regenerate blogs manifest [skip ci]"
+            git push
+          else
+            echo "blogs.json already up to date."
+          fi
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+          # .gitignore and .git are excluded automatically by the action
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

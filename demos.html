@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demos — Tau Intelligence</title>
+  <meta name="description" content="Hardware robotics demonstrations from Tau Intelligence — quadruped obstacle avoidance, drone navigation, manipulator control." />
+  <meta name="theme-color" content="#0E0D0B" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+  </script>
+</head>
+<body>
+  <canvas class="hero-bg-canvas" id="hero-canvas"></canvas>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="" onerror="this.onerror=null;this.src='assets/img/logo.svg'" />
+        <div>
+          <div class="brand-name"><span class="brand-mark">τ</span>&nbsp; Tau Intelligence</div>
+          <div class="brand-sub">Trustworthy Autonomy</div>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">≡</button>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="blogs.html">Writings</a>
+        <a href="demos.html" class="active">Demos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section container">
+    <div class="section-title">
+      <div>
+        <div class="kicker">Demos</div>
+        <h2>Research in action.</h2>
+        <p>Hardware demonstrations from our safe autonomy research. Hover to play.</p>
+      </div>
+    </div>
+
+    <!-- Collage grid — items placed by CSS grid with explicit spans
+         so different aspect ratios tile cleanly. -->
+    <div class="demo-collage">
+
+      <!-- Row 1: two landscape quadruped videos side by side -->
+      <div class="demo-tile demo-tile-landscape" data-title="Safe Quadruped Avoidance">
+        <video muted loop playsinline preload="metadata"
+               src="assets/gif/1_quadruped_safe_avoid.mp4"
+               class="demo-media"></video>
+        <div class="demo-frost">
+          <span class="demo-badge">Safe ✓</span>
+          <span class="demo-title">Quadruped · Safe Avoidance</span>
+        </div>
+      </div>
+
+      <div class="demo-tile demo-tile-landscape" data-title="Unsafe Quadruped Collision">
+        <video muted loop playsinline preload="metadata"
+               src="assets/gif/1_quadruped_unsafe_avoid.mp4"
+               class="demo-media"></video>
+        <div class="demo-frost">
+          <span class="demo-badge">Unsafe ✗</span>
+          <span class="demo-title">Quadruped · Baseline (collision)</span>
+        </div>
+      </div>
+
+      <!-- Row 2: two drone GIFs (similar aspect ~2:1) side by side -->
+      <div class="demo-tile demo-tile-landscape" data-title="Drone Static Obstacle">
+        <img src="assets/gif/2_drone_static_obstacle.gif" loading="lazy"
+             class="demo-media demo-gif" alt="Drone avoiding a static obstacle" />
+        <div class="demo-frost">
+          <span class="demo-badge">Static</span>
+          <span class="demo-title">Drone · Static Obstacle</span>
+        </div>
+      </div>
+
+      <div class="demo-tile demo-tile-landscape" data-title="Drone Moving Obstacle">
+        <img src="assets/gif/2_drone_moving_obstacle.gif" loading="lazy"
+             class="demo-media demo-gif" alt="Drone avoiding a moving obstacle" />
+        <div class="demo-frost">
+          <span class="demo-badge">Moving</span>
+          <span class="demo-title">Drone · Moving Obstacle</span>
+        </div>
+      </div>
+
+      <!-- Row 3: one wider quadruped (4:3) + two tall VLA portraits -->
+      <div class="demo-tile demo-tile-wide" data-title="Safety-Critical Quadruped">
+        <img src="assets/gif/3_quadruped-static-safety-critical.gif" loading="lazy"
+             class="demo-media demo-gif" alt="Quadruped safety-critical scenario" />
+        <div class="demo-frost">
+          <span class="demo-badge">Safety-critical</span>
+          <span class="demo-title">Quadruped · Constrained Locomotion</span>
+        </div>
+      </div>
+
+      <div class="demo-tile demo-tile-portrait" data-title="VLA Manipulator — Cornflakes">
+        <video muted loop playsinline preload="metadata"
+               src="assets/gif/4_vla_manipulator_cornflakes.mp4"
+               class="demo-media"></video>
+        <div class="demo-frost">
+          <span class="demo-badge">VLA</span>
+          <span class="demo-title">Manipulator · Cornflakes</span>
+        </div>
+      </div>
+
+      <div class="demo-tile demo-tile-portrait" data-title="VLA Manipulator — Spray Bottle">
+        <video muted loop playsinline preload="metadata"
+               src="assets/gif/4_vla_manipulator_spray_bottle.mp4"
+               class="demo-media"></video>
+        <div class="demo-frost">
+          <span class="demo-badge">VLA</span>
+          <span class="demo-title">Manipulator · Spray Bottle</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-mark">τ</span>
+        <span class="brand-name">Tau Intelligence</span>
+      </div>
+      <div>© <span id="year"></span> Tau Intelligence</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script src="assets/js/demos.js"></script>
+  <script type="module" src="assets/js/three-hero.js"></script>
+</body>
+</html>

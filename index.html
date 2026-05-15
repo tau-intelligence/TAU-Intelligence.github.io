@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tau Intelligence — Trustworthy Autonomy under Uncertainty</title>
+  <meta name="description" content="Tau Intelligence is a research group working on reinforcement learning, world models, and robotics. We publish at ICML, TMLR, RLC, ICLR, AAAI, etc." />
+  <meta name="theme-color" content="#0E0D0B" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tau Intelligence" />
+  <meta property="og:description" content="Trustworthy Autonomy under Uncertainty — a research group working on RL, world models, and robotics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/og-cover.png" />
+
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Three.js (CDN, ES module) — used for the interactive hero scene -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ============== NAV ============== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Tau Intelligence — home">
+        <img src="assets/img/logo.png" alt="" onerror="this.onerror=null;this.src='assets/img/logo.svg'" />
+        <div>
+          <div class="brand-name"><span class="brand-mark">τ</span>&nbsp; Tau Intelligence</div>
+          <div class="brand-sub">Trustworthy Autonomy</div>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">≡</button>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
+        <a href="blogs.html">Writings</a>
+        <a href="demos.html">Demos</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============== 3D BACKGROUND (fixed behind everything) ============== -->
+  <canvas class="hero-bg-canvas" id="hero-canvas" aria-label="Interactive 3D armillary visualization"></canvas>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero" id="hero-section">
+    <div class="hero-copy">
+      <h1>
+        Building&nbsp;<span class="tau">&tau;</span>rustworthy
+        Autonomy.
+      </h1>
+      <p class="lede">
+        We are a small research group working at the frontier of
+        reinforcement learning, world models, and robotics. Our work
+        appears at venues like ICML, TMLR, RLC, ICLR, AAAI,
+        etc.
+      </p>
+      <div class="btn-row">
+        <a href="research.html" class="btn btn-primary">Read our research →</a>
+        <a href="blogs.html" class="btn btn-ghost">Latest writings</a>
+      </div>
+      <div class="hero-meta">
+        <span>Reinforcement Learning</span>
+        <span>World Models</span>
+        <span>3D / 4D Gaussian Splatting</span>
+        <span>Robotics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== VENUES STRIP ============== -->
+  <div class="container">
+    <div class="venues" aria-label="Selected publication venues">
+      <span>Published at</span>
+      <span>ICML</span>·<span>TMLR</span>·<span>RLC</span>·<span>ICLR</span>·<span>AAAI</span>·<span>etc.</span>
+    </div>
+  </div>
+
+  <!-- ============== CAPABILITIES ============== -->
+  <section class="section container">
+    <div class="section-title">
+      <div>
+        <div class="kicker">What we work on</div>
+        <h2>Research at the edge of safe autonomy.</h2>
+        <p>Three threads run through everything we do — sample-efficient
+           learning, world models we can trust, and robots that fail
+           gracefully when reality drifts.</p>
+      </div>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="icon">τ</div>
+        <h3>Reinforcement Learning</h3>
+        <p>Sample-efficient RL, offline RL, model-based control, and
+           uncertainty-aware policy learning for real robots.</p>
+      </div>
+      <div class="cap-card reveal">
+        <div class="icon">◎</div>
+        <h3>World Models</h3>
+        <p>Learned simulators, 3D / 4D Gaussian splatting representations,
+           and predictive models that plan inside their own imagination.</p>
+      </div>
+      <div class="cap-card reveal">
+        <div class="icon">◇</div>
+        <h3>Robotics</h3>
+        <p>Architectures and learning pipelines for robots that have to act
+           safely under partial information and shifting dynamics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== HIGHLIGHT ============== -->
+  <section class="section container">
+    <div class="section-title">
+      <div>
+        <div class="kicker">How we work</div>
+        <h2>Open by default.</h2>
+        <p>We share our work the way we wish other groups would
+           share with us.</p>
+      </div>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <h3>Publish</h3>
+        <p>Peer-reviewed papers at venues like ICML, TMLR, RLC, ICLR,
+           AAAI, etc.</p>
+      </div>
+      <div class="cap-card reveal">
+        <h3>Open-source</h3>
+        <p>Code, datasets, and reproducible experiments accompany every
+           paper we can release.</p>
+      </div>
+      <div class="cap-card reveal">
+        <h3>Write</h3>
+        <p>Long-form notes and writeups that explain the methods we
+           use — shipped as plain web pages, not paywalled PDFs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-mark">τ</span>
+        <span class="brand-name">Tau Intelligence</span>
+      </div>
+      <div>© <span id="year"></span> Tau Intelligence · Trustworthy Autonomy under Uncertainty</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/transitions.js"></script>
+  <script type="module" src="assets/js/three-hero.js"></script>
+</body>
+</html>

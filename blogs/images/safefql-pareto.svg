@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SafeFQL — Reward vs Cost (qualitative summary of Figure 2 of the paper).
+  All point positions are illustrative — the paper reports per-environment
+  numbers in tables; this view summarises the qualitative finding that
+  SafeFQL occupies the upper-left "high reward, near-zero cost" corner.
+  Layout note: every text label sits inside the plot rect so nothing is
+  clipped, with leader lines pulling far-corner points toward their names.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img"
+     aria-label="Reward versus cost. SafeFQL achieves the highest reward at the lowest constraint violation; soft-constraint baselines occupy the lower-right region.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#15130F"/>
+      <stop offset="100%" stop-color="#0E0D0B"/>
+    </linearGradient>
+    <radialGradient id="ourGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#E8722C" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#E8722C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="760" height="420" fill="url(#bg)"/>
+
+  <!-- Title bar -->
+  <text x="40" y="28" fill="#7E7565" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">REWARD vs COST · QUALITATIVE SUMMARY</text>
+
+  <!-- Plot frame -->
+  <g transform="translate(96, 56)">
+    <rect width="600" height="280" fill="none" stroke="#2E2820"/>
+
+    <!-- gridlines -->
+    <g stroke="#1C1813" stroke-dasharray="2 4">
+      <line x1="0"   y1="56"  x2="600" y2="56"/>
+      <line x1="0"   y1="112" x2="600" y2="112"/>
+      <line x1="0"   y1="168" x2="600" y2="168"/>
+      <line x1="0"   y1="224" x2="600" y2="224"/>
+      <line x1="120" y1="0"   x2="120" y2="280"/>
+      <line x1="240" y1="0"   x2="240" y2="280"/>
+      <line x1="360" y1="0"   x2="360" y2="280"/>
+      <line x1="480" y1="0"   x2="480" y2="280"/>
+    </g>
+
+    <!-- "cost ~ 0" guide -->
+    <line x1="64" y1="0" x2="64" y2="280" stroke="#E8722C" stroke-opacity=".25" stroke-dasharray="4 5"/>
+    <text x="68" y="14" fill="#E8722C" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1">cost ≈ 0</text>
+
+    <!-- Pareto frontier sketch -->
+    <path d="M40,52 C 90,50 160,68 240,96 S 380,154 500,212 L 560,238" fill="none"
+          stroke="#E9A766" stroke-opacity=".35" stroke-width="1.6" stroke-dasharray="3 5"/>
+    <text x="200" y="44" fill="#E9A766" font-family="JetBrains Mono, monospace"
+          font-size="9" letter-spacing="1" opacity=".7">PARETO FRONTIER</text>
+
+    <!-- ============================================================
+         Methods. Each label sits to the right of its dot and never
+         crosses the plot boundary.
+         ============================================================ -->
+    <g font-family="Inter, sans-serif" font-size="11">
+
+      <!-- SafeFQL — pulled inward so its leader line + label fit -->
+      <circle cx="50" cy="56" r="22" fill="url(#ourGlow)"/>
+      <circle cx="50" cy="56" r="9"  fill="#E8722C" stroke="#F2E9D8" stroke-width="1.5"/>
+      <!-- leader line out to the side -->
+      <path d="M62,56 L 110,80" fill="none" stroke="#E8722C" stroke-width="1"/>
+      <text x="116" y="78" fill="#E8722C" font-weight="600">SafeFQL (ours)</text>
+      <text x="116" y="92" fill="#7E7565" font-family="JetBrains Mono, monospace" font-size="9.5">N=1 · no rejection sampling</text>
+      <text x="116" y="106" fill="#7BC47F" font-family="JetBrains Mono, monospace" font-size="9.5">BEST CORNER ◀</text>
+
+      <!-- SafeIFQL with R.S. -->
+      <circle cx="124" cy="116" r="6" fill="#6FB7C9"/>
+      <text x="136" y="120" fill="#F2E9D8">SafeIFQL (R.S.)</text>
+
+      <!-- FISOR with R.S. -->
+      <circle cx="156" cy="148" r="6" fill="#6FB7C9"/>
+      <text x="168" y="152" fill="#F2E9D8">FISOR (R.S.)</text>
+
+      <!-- C2IQL — high reward but inconsistent cost -->
+      <circle cx="316" cy="80" r="6" fill="#E9A766"/>
+      <text x="328" y="84" fill="#F2E9D8">C2IQL</text>
+
+      <!-- FISOR (no R.S.) -->
+      <circle cx="216" cy="180" r="6" fill="#6FB7C9" fill-opacity=".5" stroke="#6FB7C9"/>
+      <text x="228" y="184" fill="#B7AC97">FISOR (N=1)</text>
+
+      <!-- CPQ -->
+      <circle cx="260" cy="208" r="6" fill="#B7AC97"/>
+      <text x="272" y="212" fill="#F2E9D8">CPQ</text>
+
+      <!-- COptiDICE -->
+      <circle cx="372" cy="228" r="6" fill="#B7AC97"/>
+      <text x="384" y="232" fill="#F2E9D8">COptiDICE</text>
+
+      <!-- BEAR-Lag -->
+      <circle cx="468" cy="248" r="6" fill="#B7AC97"/>
+      <text x="480" y="252" fill="#F2E9D8">BEAR-Lag</text>
+    </g>
+
+    <!-- Axes labels (inside the canvas, above and to the side of the frame). -->
+    <text x="300" y="312" text-anchor="middle" fill="#B7AC97"
+          font-family="Inter, sans-serif" font-size="12">cost  →  (constraint violations · lower is safer)</text>
+    <text x="-140" y="-58" transform="rotate(-90)" fill="#B7AC97"
+          font-family="Inter, sans-serif" font-size="12">reward  →  (cumulative · higher is better)</text>
+  </g>
+
+  <!-- Legend strip -->
+  <g transform="translate(96, 388)" font-family="Inter, sans-serif" font-size="11" fill="#B7AC97">
+    <circle cx="0"   cy="0" r="5" fill="#E8722C"/><text x="10"  y="4">SafeFQL (ours)</text>
+    <circle cx="140" cy="0" r="5" fill="#6FB7C9"/><text x="150" y="4">Generative + R.S.</text>
+    <circle cx="310" cy="0" r="5" fill="#E9A766"/><text x="320" y="4">C2IQL</text>
+    <circle cx="380" cy="0" r="5" fill="#B7AC97"/><text x="390" y="4">Soft-constraint baselines</text>
+  </g>
+</svg>
+

@@ -1,0 +1,82 @@
+{
+  "_comment": "Tau Intelligence — publications manifest. Add an object to `papers` for each publication. The `links` block can include any of: pdf (relative or absolute), arxiv, code, project, bibtex. Order does not matter; the site sorts newest-first by `year`.",
+  "papers": [
+    {
+      "title": "Safe Flow Q-Learning: Offline Safe Reinforcement Learning with Reachability-Based Flow Policies",
+      "authors": ["Mumuksh Tayal", "Manan Tayal", "Ravi Prakash"],
+      "venue": "RLC",
+      "year": 2026,
+      "tags": ["safe RL", "offline RL", "flow matching"],
+      "abstract": "SafeFQL combines a Hamilton-Jacobi reachability-inspired safety value function with an efficient one-step flow policy for safe offline RL, achieving 2.5x faster inference than diffusion-style baselines while reducing constraint violations.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2603.15136"
+      }
+    },
+    {
+      "title": "V-OCBF: Verification-based Optimal Control Barrier Functions",
+      "authors": ["Manan Tayal", "Mumuksh Tayal", "Ravi Prakash"],
+      "venue": "TMLR",
+      "year": 2026,
+      "tags": ["safety", "control barrier functions", "verification"],
+      "abstract": "A verification-based approach to optimal control barrier functions for safe autonomous systems.",
+      "links": {
+        "pdf": "https://openreview.net/forum?id=PGO9mpIyyb"
+      }
+    },
+    {
+      "title": "A Physics-Informed Machine Learning Framework for Safe and Optimal Control of Autonomous Systems",
+      "authors": ["Manan Tayal", "Aditya Singh", "Shishir Kolathaya", "Somil Bansal"],
+      "venue": "ICML",
+      "year": 2025,
+      "tags": ["physics-informed", "safety", "optimal control"],
+      "abstract": "A physics-informed machine learning framework for safe and optimal control of autonomous systems.",
+      "links": {
+        "pdf": "https://openreview.net/forum?id=SrfwiloGQF"
+      }
+    },
+    {
+      "title": "Epigraph-Guided Flow Matching for Safe and Performant Offline Reinforcement Learning",
+      "authors": ["Mumuksh Tayal", "Manan Tayal", "Ravi Prakash"],
+      "venue": "ICLR",
+      "year": 2026,
+      "tags": ["offline RL", "safe RL", "flow matching"],
+      "abstract": "An epigraph-guided flow matching approach for safe and performant offline reinforcement learning.",
+      "links": {
+        "pdf": "https://openreview.net/forum?id=U3EW3m3Ys5"
+      }
+    },
+    {
+      "title": "MAD-PINN: A Decentralized Physics-Informed Machine Learning Framework for Safe and Optimal Multi-Agent Control",
+      "authors": ["Manan Tayal", "Aditya Singh", "Shishir Kolathaya", "Somil Bansal"],
+      "venue": "AAAI",
+      "year": 2026,
+      "tags": ["multi-agent", "physics-informed", "safety"],
+      "abstract": "A decentralized physics-informed machine learning framework for safe and optimal multi-agent control.",
+      "links": {
+        "pdf": "https://openreview.net/forum?id=nwcFuR19AJ"
+      }
+    },
+    {
+      "title": "Semi-supervised Safe Visuomotor Policy Synthesis Using Barrier Certificates",
+      "authors": ["Manan Tayal", "Aditya Singh", "Pushpak Jagtap", "Shishir Kolathaya"],
+      "venue": "CDC",
+      "year": 2025,
+      "tags": ["safety", "barrier certificates", "visuomotor"],
+      "abstract": "A semi-supervised approach to safe visuomotor policy synthesis using barrier certificates.",
+      "links": {
+        "pdf": "https://ieeexplore.ieee.org/iel8/11311984/11311968/11312180.pdf"
+      }
+    },
+    {
+      "title": "RISE: Robust Imitation through Stochastic Encoding",
+      "authors": ["Mumuksh Tayal", "Manan Tayal", "Ravi Prakash"],
+      "venue": "IROS",
+      "year": 2025,
+      "tags": ["imitation learning", "robustness", "robotics"],
+      "abstract": "RISE uses stochastic encoding for robust imitation learning in robotics.",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2503.12243"
+      }
+    }
+  ]
+}

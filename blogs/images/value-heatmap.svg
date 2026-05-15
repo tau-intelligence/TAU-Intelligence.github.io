@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="Value function heatmap">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#15130F"/>
+      <stop offset="100%" stop-color="#0E0D0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#bg)"/>
+  <g transform="translate(20,20)">
+    <!-- 8x5 heatmap, values increase toward top-right -->
+    <g>
+      <!-- generated -->
+      <rect x="0"   y="0"   width="35" height="32" fill="#3a2a1c"/>
+      <rect x="35"  y="0"   width="35" height="32" fill="#5b3a22"/>
+      <rect x="70"  y="0"   width="35" height="32" fill="#7c4a25"/>
+      <rect x="105" y="0"   width="35" height="32" fill="#9c5a26"/>
+      <rect x="140" y="0"   width="35" height="32" fill="#bd6b27"/>
+      <rect x="175" y="0"   width="35" height="32" fill="#d77b29"/>
+      <rect x="210" y="0"   width="35" height="32" fill="#e98e3e"/>
+      <rect x="245" y="0"   width="35" height="32" fill="#f0a45f"/>
+
+      <rect x="0"   y="32"  width="35" height="32" fill="#2e2218"/>
+      <rect x="35"  y="32"  width="35" height="32" fill="#4f321d"/>
+      <rect x="70"  y="32"  width="35" height="32" fill="#704221"/>
+      <rect x="105" y="32"  width="35" height="32" fill="#905224"/>
+      <rect x="140" y="32"  width="35" height="32" fill="#b06226"/>
+      <rect x="175" y="32"  width="35" height="32" fill="#cd7228"/>
+      <rect x="210" y="32"  width="35" height="32" fill="#e08530"/>
+      <rect x="245" y="32"  width="35" height="32" fill="#e89a55"/>
+
+      <rect x="0"   y="64"  width="35" height="32" fill="#241a13"/>
+      <rect x="35"  y="64"  width="35" height="32" fill="#42291a"/>
+      <rect x="70"  y="64"  width="35" height="32" fill="#623a1f"/>
+      <rect x="105" y="64"  width="35" height="32" fill="#824a23"/>
+      <rect x="140" y="64"  width="35" height="32" fill="#a35a26"/>
+      <rect x="175" y="64"  width="35" height="32" fill="#c16a28"/>
+      <rect x="210" y="64"  width="35" height="32" fill="#d77c2c"/>
+      <rect x="245" y="64"  width="35" height="32" fill="#e09148"/>
+
+      <rect x="0"   y="96"  width="35" height="32" fill="#1c140f"/>
+      <rect x="35"  y="96"  width="35" height="32" fill="#341f15"/>
+      <rect x="70"  y="96"  width="35" height="32" fill="#52301c"/>
+      <rect x="105" y="96"  width="35" height="32" fill="#724020"/>
+      <rect x="140" y="96"  width="35" height="32" fill="#925025"/>
+      <rect x="175" y="96"  width="35" height="32" fill="#b16028"/>
+      <rect x="210" y="96"  width="35" height="32" fill="#cb702a"/>
+      <rect x="245" y="96"  width="35" height="32" fill="#d6843a"/>
+
+      <rect x="0"   y="128" width="35" height="32" fill="#15100c"/>
+      <rect x="35"  y="128" width="35" height="32" fill="#281910"/>
+      <rect x="70"  y="128" width="35" height="32" fill="#42271a"/>
+      <rect x="105" y="128" width="35" height="32" fill="#613720"/>
+      <rect x="140" y="128" width="35" height="32" fill="#824724"/>
+      <rect x="175" y="128" width="35" height="32" fill="#a25827"/>
+      <rect x="210" y="128" width="35" height="32" fill="#bd682a"/>
+      <rect x="245" y="128" width="35" height="32" fill="#c97a35"/>
+    </g>
+  </g>
+  <text x="20" y="190" fill="#7E7565" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5">V*(s) — VALUE FUNCTION</text>
+</svg>

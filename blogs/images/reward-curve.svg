@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="Reward curve">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#15130F"/>
+      <stop offset="100%" stop-color="#0E0D0B"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#E8722C" stop-opacity=".4"/>
+      <stop offset="100%" stop-color="#E8722C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#bg)"/>
+
+  <!-- axes -->
+  <g stroke="#2E2820" stroke-width="1">
+    <line x1="40" y1="20"  x2="40"  y2="170"/>
+    <line x1="40" y1="170" x2="300" y2="170"/>
+  </g>
+
+  <!-- mean curve -->
+  <path d="M40,160 C90,150 110,120 140,90 S210,55 250,45 290,40 300,38"
+        fill="none" stroke="#E8722C" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- variance ribbon -->
+  <path d="M40,168 C90,158 110,130 140,105 S210,72 250,62 290,58 300,55
+           L300,22 C290,25 250,32 210,40 S140,72 90,118 40,150 40,150 Z"
+        fill="url(#ribbon)" opacity=".7"/>
+
+  <text x="40"  y="190" fill="#7E7565" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5">EPISODES →</text>
+  <text x="20"  y="20"  fill="#7E7565" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" transform="rotate(-90 20 20)">RETURN</text>
+</svg>
